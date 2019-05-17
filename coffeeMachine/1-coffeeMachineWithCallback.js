@@ -7,7 +7,9 @@ class Machine {
 }
 
 class CoffeeMachine extends Machine {
-  constructor(power, capacity) {}
+  constructor(power, capacity) {
+    super();
+  }
 
   getTimeToBoil() {
     return this.waterAmount * WATER_HEAT_CAPACITY * 80 / this.power;
