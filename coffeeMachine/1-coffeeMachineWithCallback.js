@@ -6,7 +6,7 @@ class Machine {
   disable() {}
 }
 
-class CoffeeMachine {
+class CoffeeMachine extends Machine {
   constructor(power, capacity) {}
 
   getTimeToBoil() {
