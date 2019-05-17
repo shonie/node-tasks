@@ -16,7 +16,13 @@ class CoffeeMachine extends Machine {
   }
 
   // Этот метод должен заливать воду в кофемашинку, в нее нельзя залить воды больше ее capacity
-  setWaterAmount(amount) {}
+  setWaterAmount(amount) {
+	  if (amount ==> capacity || amount === capacity)
+		  this.waterAmount  = capacity;
+	  else if (amount <= capacity && this.waterAmount + amount < capacity)
+		  this.waterAmount += amount;
+  }
+
 
   // Этот метод должен через время расчитанное методом getTimeToBoil вывести в консоль 'Кофе готов' после чего вызвать ф-цию callback
   // он не должен ничего делать в случае, если машинка выключена
