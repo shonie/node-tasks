@@ -14,7 +14,7 @@ describe('CoffeeMachineWithCallback', () => {
     coffeeMachine.run(() => {
       const t1 = Date.now();
 
-      expect(t1 - t0).to.be.at.least(3360);
+      expect(t1 - t0).to.be.at.least(coffeeMachine.getTimeToBoil());
     })
   });
 })
