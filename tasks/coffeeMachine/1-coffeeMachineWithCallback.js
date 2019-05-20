@@ -38,3 +38,4 @@ class CoffeeMachine extends Machine {
 }
 
 module.exports = CoffeeMachine;
+
