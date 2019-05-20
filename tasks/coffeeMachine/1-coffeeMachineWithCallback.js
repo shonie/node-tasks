@@ -36,11 +36,5 @@ class CoffeeMachine extends Machine {
 	console.log("Coffee is ready");
   }
 }
-const coffeeMachine = new CoffeeMachine(100000, 400);
 
-
-coffeeMachine.run(() => console.log(`Let's take some cookies!`)); // Nothing
-
-coffeeMachine.enable();
-
-coffeeMachine.run(() => console.log(`Let's take some cookies!`)); // Now works
+module.exports = CoffeeMachine;

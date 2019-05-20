@@ -16,5 +16,5 @@ describe('CoffeeMachineWithCallback', () => {
 
       expect(t1 - t0).to.be.at.least(3360);
     })
-  })
+  });
 })
