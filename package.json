@@ -1,0 +1,27 @@
+{
+  "name": "node-tasks",
+  "version": "1.0.0",
+  "description": "node-tasks",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha --recursive ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shonie/node-tasks.git"
+  },
+  "author": "lermarco, shonie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shonie/node-tasks/issues"
+  },
+  "homepage": "https://github.com/shonie/node-tasks#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "mocha-cli": "^1.0.1"
+  }
+}
