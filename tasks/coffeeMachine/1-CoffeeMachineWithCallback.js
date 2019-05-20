@@ -12,6 +12,8 @@ class CoffeeMachine extends Machine {
   constructor(power, capacity) {
     super(); 
 	this.waterAmount = 0;
+	this.capacity = capacity;
+	this.power = power;
 }
 
   getTimeToBoil() {
@@ -20,9 +22,9 @@ class CoffeeMachine extends Machine {
 
   // Этот метод должен заливать воду в кофемашинку, в нее нельзя залить воды больше ее capacity
   setWaterAmount(amount) {
-	  if (amount => capacity)
-		  this.waterAmount  = capacity;
-	  else if (this.waterAmount + amount < capacity)
+	  if (amount => this.capacity)
+		  this.waterAmount  = this.capacity;
+	  else if (this.waterAmount + amount < this.capacity)
 		  this.waterAmount += amount;
   }
 
