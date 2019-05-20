@@ -17,9 +17,9 @@ class CoffeeMachine extends Machine {
 
   // Этот метод должен заливать воду в кофемашинку, в нее нельзя залить воды больше ее capacity
   setWaterAmount(amount) {
-	  if (amount ==> capacity || amount === capacity)
+	  if (amount ==> capacity)
 		  this.waterAmount  = capacity;
-	  else if (amount <= capacity && this.waterAmount + amount < capacity)
+	  else if (amount <== capacity && this.waterAmount + amount < capacity)
 		  this.waterAmount += amount;
   }
 
