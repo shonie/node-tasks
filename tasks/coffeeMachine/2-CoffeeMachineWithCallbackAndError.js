@@ -41,9 +41,10 @@ class CoffeeMachine extends Machine {
         if (Math.random() > 0.5) {
           throw new Error('Random error');
         }
-
+			callback(null, this.waterAmount);
         // Execute callback with error = null and this.waterAmount as everything is ok
       } catch(error) {
+			callback(error, null);
         // Execute callback with error on a first position and this.waterMount on the second position
       }
     }, this.getTimeToBoil());
