@@ -1,9 +1,11 @@
 const WATER_HEAT_CAPACITY = 4200;
 
 class Machine {
-  enable() {}
+  constructor(){this.switch = false};
+  enable(){this.switch = true} 
 
-  disable() {}
+  disable(){this.switch = false}
+
 }
 
 class CoffeeMachine extends Machine {
@@ -17,18 +19,21 @@ class CoffeeMachine extends Machine {
 
   // Этот метод должен заливать воду в кофемашинку, в нее нельзя залить воды больше ее capacity
   setWaterAmount(amount) {
-	  if (amount ==> capacity)
+	  if (amount => capacity)
 		  this.waterAmount  = capacity;
-	  else if (amount <== capacity && this.waterAmount + amount < capacity)
+	  else if (amount <= capacity && this.waterAmount + amount < capacity)
 		  this.waterAmount += amount;
   }
 
-
   // Этот метод должен через время расчитанное методом getTimeToBoil вывести в консоль 'Кофе готов' после чего вызвать ф-цию callback
   // он не должен ничего делать в случае, если машинка выключена
-  run(callback) {}
+  run(callback) {
+	if (this.switch == false)
+		return;
+	setTimeout(callback, this.getTimeToBoil());
+	console.log("Coffee is ready");
+  }
 }
-
 const coffeeMachine = new CoffeeMachine(100000, 400);
 
 
