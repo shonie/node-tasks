@@ -2,7 +2,7 @@ const WATER_HEAT_CAPACITY = 4200;
 
 class Machine {
   constructor(){this.switch = false};
-  enable(){this.switch = true} 
+  enable(){this.switch = true}
 
   disable(){this.switch = false}
 
