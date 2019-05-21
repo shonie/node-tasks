@@ -31,7 +31,7 @@ class CoffeeMachine extends Machine {
 	return new Promise((resolve, reject) =>
 	{
 		if(this.switch == false)
-			return reject();
+			return reject("some error");
 		setTimeout(()=> {
 		  console.log('Coffee is ready');
 		  try {
@@ -40,7 +40,7 @@ class CoffeeMachine extends Machine {
 			}
 				return resolve(this.waterAmount);
 		  }catch (error){
-		    return reject();	
+		    return reject(error);	
 		  }
 		}, this.getTimeToBoil());	
 	})
