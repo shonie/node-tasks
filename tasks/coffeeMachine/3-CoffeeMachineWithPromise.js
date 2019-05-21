@@ -38,7 +38,7 @@ class CoffeeMachine extends Machine {
 			if (Math.random() > 0.5) {
 				throw new Error('Random error');
 			}
-				return resolve();
+				return resolve(this.waterAmount);
 		  }catch (error){
 		    return reject();	
 		  }
