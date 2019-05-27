@@ -1,3 +1,5 @@
+const wait = require('../wait/1-wait');
+
 const WATER_HEAT_CAPACITY = 4200;
 
 class Machine {
@@ -27,24 +29,27 @@ class CoffeeMachine extends Machine {
 		  this.waterAmount += amount;
   }
 
-  run() {
-	return new Promise((resolve, reject) =>
-	{
-		if(this.switch == false)
-			return reject("some error");
-		setTimeout(()=> {
-		  console.log('Coffee is ready');
-		  try {
+  async run() {
+		await wait(this.getTimeToBoil());
+
+		try {
+			const value = 5;
+
+			const doDbRequest = () => Promise.resolve(value);
+
+			await doDbRequest();
+
+			if (!this.switch) {
+				throw new Error('Machine is disabled');
+			}
+
 			if (Math.random() > 0.5) {
 				throw new Error('Random error');
 			}
-				return resolve(this.waterAmount);
-		  }catch (error){
-		    return reject(error);	
-		  }
-		}, this.getTimeToBoil());	
-	})
+			return this.waterAmount;
+		} catch (error) {
+			throw error;
+		}
   }
 }
 module.exports = CoffeeMachine;
-

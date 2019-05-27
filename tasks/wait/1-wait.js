@@ -1,3 +1,3 @@
-const wait = (ms) => new Promise((resolve) => resolve());
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 module.exports = wait;
